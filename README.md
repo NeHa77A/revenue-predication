@@ -79,28 +79,15 @@ This checks:
 
 #### 3.1 Create Virtual Environment
 
-**Linux/Mac:**
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-**Windows:**
-```bash
-python -m venv .venv
+uv venv --python 3.13
 .venv\Scripts\activate
 ```
 
 #### 3.2 Install Python Dependencies
 
 ```bash
-pip install --upgrade pip
-pip install -e .
-```
-
-Or if using `uv`:
-```bash
-uv pip install -e .
+uv sync
 ```
 
 This installs:
@@ -117,7 +104,7 @@ This installs:
 #### 3.3 Start the Backend Server
 
 ```bash
-python main.py
+uv run main.py
 ```
 
 Or using uvicorn directly:
@@ -339,7 +326,7 @@ The frontend will be available at: `http://localhost:3000`
 **Terminal 1 - Backend:**
 ```bash
 source .venv/bin/activate  # Activate venv
-python main.py
+uv run main.py
 # Or: uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
